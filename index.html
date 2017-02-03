@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javi Diaz | Dino-Hangman</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/darkly/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="main-container">
+				<nav class="navbar navbar-default navbar-fixed-top" id="masthead">
+ 					 <div class="container" id="header">
+    					<h1>Dino-HangMan</h1>
+ 					 </div>
+			 	</nav>
+			<div class="main-content">
+			 	<div class="row">
+					<div class="col-md-6" id="images-col">
+					<img src="images/dino.jpg" id="dinoimage">
+					</div>
+					<div class="col-md-6" id="data-col">
+					<h3>Instructions</h3>
+
+					
+					<h3><span id="canyouguess"></span></h3>
+
+					<h3>Hint:&nbsp&nbsp<span id="dinohint"></span></h3>
+					
+					<h3>computer word (remove)</h3>
+					<span id="computerword"></span>
+
+					<h3>You guessed the following letters..</h3>
+					<span id="log"></span>
+					<br>
+
+					<h3> You Have <span id="life"></span> Guesses Remaining</h3>
+
+					<button id="playagain" type="reset" value="Reset"> Play Again?</button>
+
+					<h3><a href="https://www.newdinosaurs.com/" target="_blank">Or Learn More About Dinosuars</a></h3>
+					
+					</div>
+			</div>
+
+			 	</div>
+
+				<footer class="navbar navbar-default navbar-fixed-bottom">
+ 			 			<div class="container" id="footerlink">
+    					<a href="http://www.javidiaz.com" target="_blank">www.javidiaz.com</a>
+ 						</div>
+			 			</footer>
+</div>
+
+<script type="text/javascript">
+    //places the number of guesses allowed on the webpage before the game begins
+		
+
+	// wordlist variable will generate the words to be guessed in the game
+		var wordList = ["stegosaurus", "triceratops", "velociraptor", "brontosaurus", "pterosaurus", "dilong"]; 
+   //provides a fun hint to help with the guess
+		var fact0 = "I have a club for a tail!";
+		var fact1 = "My horns stand for three!";
+		var fact2 = "Ever been disembowled?";
+		var fact3 = "I'm really big!";
+		var fact4 = "I love to soar to new heights!";
+		var fact5 = "I had feathers before they were cool!"
+		var dead = "TOO LATE!! WE HAVE BECOME EXTINCT!!";
+		var canYou = "Can You Guess Who I Am?";
+		var startTries = 13;
+
+
+	//places the number of guesses allowed on the webpage before the game begins
+		document.getElementById("life").innerHTML = startTries;
+		document.getElementById("canyouguess").innerHTML = canYou;
+
+	// //computer selects a word from the wordList array 
+		var computerWord = wordList[Math.floor(Math.random() * wordList.length)];
+		document.getElementById("computerword").innerHTML = computerWord;
+
+		if (computerWord == wordList[0]) {
+		document.getElementById("dinohint").innerHTML = fact0;
+		}
+		else if (computerWord == wordList[1]){
+			document.getElementById("dinohint").innerHTML = fact1;
+		}
+		else if (computerWord == wordList[2]){
+			document.getElementById("dinohint").innerHTML = fact2;
+		}
+		else if (computerWord == wordList[3]){
+			document.getElementById("dinohint").innerHTML = fact3;
+		}
+		else if (computerWord == wordList[4]){
+			document.getElementById("dinohint").innerHTML = fact4;
+		}
+		else if (computerWord == wordList[5]){
+			document.getElementById("dinohint").innerHTML = fact5;
+		}
+
+	// // // provides keyboard input that the user presses on the game
+			document.onkeyup = function(event) {
+
+	// // Records the user input into the variable guess for later use.
+ 			var guess = event.key;
+ // 	//creates a new variable called guess which is the user key press guess 
+			var guessed = document.getElementById("log").innerHTML + guess;
+
+			var tries = document.getElementById("life").innerHTML --; 
+		
+			document.getElementById("log").innerHTML = guessed;	
+		//if the users is down to his last guess the image will turn read and flash extinct.
+			if (tries < 2) { 
+			document.getElementById("canyouguess").innerHTML = dead;
+			document.getElementById("dinoimage").src = "images/dino2.jpg";
+		}
+
+			//(match the winning word if all matched up)
+		    // else if ()
+			}
+		
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
