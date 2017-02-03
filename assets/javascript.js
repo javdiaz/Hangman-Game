@@ -28,7 +28,7 @@
 		if (computerWord == wordList[0]) {
 		document.getElementById("dinohint").innerHTML = fact0;
 		}
-		else if (computerWord == wordList[1]){
+		else if (computerWord == wordList[1])
 			document.getElementById("dinohint").innerHTML = fact1;
 		}
 		else if (computerWord == wordList[2]){
@@ -44,6 +44,8 @@
 			document.getElementById("dinohint").innerHTML = fact5;
 		}
 
+			document.getElementById("life").innerHTML = startTries;
+
 	// // // provides keyboard input that the user presses on the game
 			document.onkeyup = function(event) {
 	// // Records the user input into the variable guess for later use.
@@ -53,25 +55,27 @@
 
 			document.getElementById("log").innerHTML = guessed;
 
-			document.getElementById("life").innerHTML = startTries;
-
-			 var tries = document.getElementById("life").innerHTML--;
-
-			// for (var i = 0; i < alphabet.length; i++){
-			// if (guessed !== alphabet[i]); 
-			// startTries--;
-			// }
+			for (var i = 0; i < alphabet.length; i++){
+			if (guessed == alphabet[i]); 
+			startTries--;
+			}
 
 			//----------------------------------------------
 			
+
+		
 				
 		//if the users is down to his last guess the image will turn read and flash extinct.
-			if (tries > 2) { 
+			if (starTries = 0) { 
 			document.getElementById("canyouguess").innerHTML = dead;
 			document.getElementById("dinoimage").src = "images/dino2.jpg";
 		}
-			
+			//(match the winning word if all matched up)
+		    // else if ()
 			}
 
-			
+			// for (var i = 0; i < alphabet.length; i++) {
+			// if (guess !== alphabet[i]);
+			// 	tries--;
+			// }
 		

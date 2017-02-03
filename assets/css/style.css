@@ -1,0 +1,72 @@
+body {
+	margin-top: 140px;
+	font-family: 'Fredericka the Great', cursive;
+	background-color: #00bc8c;
+	background-image: url(../images/dinopattern2.png);
+	background-size: 60%;
+	
+}
+
+h1, h2, h3 {
+	font-family: 'Fredericka the Great', cursive;
+}
+
+h3 {
+ font-size: 22px;
+}
+
+footer {
+	text-align: center;
+}
+
+
+.main-content {
+	width: 80%;
+	margin: 0 auto;
+	/*background-color: #000;*/
+
+}
+
+#images-col img {
+	width:98%;
+	border: 2px solid #375a7f;
+	border-radius: 20px;
+}
+
+#masthead {
+	text-align: center;
+}
+
+#header h1 {
+	text-align: center
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 60px;
+}
+
+#playagain {
+	color: #000;
+	font-size: 20px;
+
+}
+
+#footerlink a {
+  padding-top: 20px;
+}
+
+#dinohunt {
+	font-size: 8px;
+}
+#data-col {
+	padding: 12px;
+	background-color: #000;
+	text-align: center;
+}
+#life, #log {
+	color: yellow;
+}
+#log {
+	font-size: 24px;
+}
+
+
+
