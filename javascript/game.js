@@ -14,7 +14,7 @@
  		var startTries = 13;
  		// var spelled = [];
  		var spelled = "";
- 		var displayWordHold = "";
+ 		var displayWordHold = []; //changed jd FD
 
  		// variable canyou places a game challange phrase, at the end of the game if the user losses it changes to variable dead
  		document.getElementById("canyouguess").innerHTML = canYou;
@@ -26,10 +26,10 @@
 		// displayWordHold.replace(computerWord[i],"_");
  		//test
  			for (var i = 0; i < computerWord.length; i++){	
-			displayWordHold += "_";
+			displayWordHold.push("_");//changed jd FD
 			}
 
-			document.getElementById("computerword").innerHTML = displayWordHold;
+			document.getElementById("computerword").innerHTML = displayWordHold.join("");//changed jd FD
 
    		//if sttement that matches the selected word to a hint fact abou the dinosaur being guessed
  		if (computerWord == wordList[0]) {
@@ -81,7 +81,7 @@
 			
 			}
 			
-  			document.getElementById("computerword").innerHTML = spelled;
+  			document.getElementById("computerword").innerHTML = displayWordHold.join("");//changed jd FD
   			}
  		// var tries = document.getElementById("life").innerHTML; 
  		document.getElementById("log").innerHTML = guessed;	
